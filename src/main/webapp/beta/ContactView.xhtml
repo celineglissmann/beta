@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>ContactView</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Kontaktdaten</h1>
+        <div>
+            <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
+                <p:column headerText="Titel">
+                    <h:outputText value="#{contact.title}" />
+                </p:column>
+
+                <p:column headerText="Vorname">
+                    <h:outputText value="#{contact.firstName}" />
+                </p:column>
+
+                <p:column headerText="Nachname">
+                    <h:outputText value="#{contact.lastName}" />
+                </p:column>
+                
+                <p:column headerText="Geschlecht">
+                    <h:outputText value="#{contact.sex}" />
+                </p:column>
+
+                <p:column headerText="Communications">
+                    <h:outputText value="#{contact.communications}" />
+                </p:column>
+            </p:dataTable></div>
+    </body>
+</html>
