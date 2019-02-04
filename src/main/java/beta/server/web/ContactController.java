@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package beta.web.presenter;
+package beta.server.web;
 import java.io.Serializable;
 import beta.server.eao.ContactEao;
 import beta.server.entity.Contact;
@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 /**
- * Controller for Contract
+ * Controller for Contact
  *
  * @author jens.papenhagen
  */
