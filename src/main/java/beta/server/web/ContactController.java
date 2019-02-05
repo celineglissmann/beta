@@ -9,13 +9,17 @@ import beta.server.eao.ContactEao;
 import beta.server.entity.Contact;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import lombok.Getter;
 /**
  * Controller for Contact
  *
  * @author jens.papenhagen
  */
+@Named
+@ViewScoped
 public class ContactController implements Serializable {
 @Inject
     ContactEao contactEao;
