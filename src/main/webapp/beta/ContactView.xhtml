@@ -15,7 +15,7 @@
 
         <h:body>
 
-             <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
+            <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
                 <p:column headerText="Titel">
                     <h:outputText value="#{contact.title}" />
                 </p:column>
@@ -27,13 +27,29 @@
                 <p:column headerText="Nachname">
                     <h:outputText value="#{contact.lastName}" />
                 </p:column>
-                
+
                 <p:column headerText="Geschlecht">
                     <h:outputText value="#{contact.sex}" />
                 </p:column>
-
+                
+                  <p:column headerText="Anschrift">
+                      <h:outputText value="#{contactController.street(contact)}" />
+                </p:column>
+                
+                <p:column headerText="PLZ">
+                    <h:outputText value="#{contactController.zipCode(contact)}" />
+                </p:column>
+                
+                <p:column headerText="Stadt">
+                    <h:outputText value="#{contactController.city(contact)}" />
+                </p:column>
+                
+                <p:column headerText="Land">
+                    <h:outputText value="#{contactController.country(contact)}" />
+                </p:column>
+                
                 <p:column headerText="Communications">
-                    <h:outputText value="#{contact.communications}" />
+                    <h:outputText value="#{contactController.communications(contact)}" />
                 </p:column>
             </p:dataTable>
         </h:body>
