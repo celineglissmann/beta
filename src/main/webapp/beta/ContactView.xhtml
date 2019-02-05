@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:h="http://java.sun.com/jsf/html"  
-      xmlns:p="http://primefaces.org/ui"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core">
-    
-    <head>
-        <title>ContactView</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <h:body>
-        <p:layout fullPage="true">
-        <h1>Kontaktdaten</h1>
-        
-        <p:layoutUnit position="center">
-            <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+             <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
                 <p:column headerText="Titel">
                     <h:outputText value="#{contact.title}" />
                 </p:column>
@@ -36,7 +36,8 @@
                     <h:outputText value="#{contact.communications}" />
                 </p:column>
             </p:dataTable>
-        </p:layoutUnit>
-        </p:layout>
-    </h:body>
+        </h:body>
+
+    </f:view>
 </html>
+
