@@ -18,8 +18,9 @@ import lombok.Getter;
 
 /**
  * Controller for Contact
- *
- * @author jens.papenhagen
+ * splits the adresses in city, zipcode,country, street 
+ * collect all communications from contact 
+ * @author celine.glissmann
  */
 @Named
 @ViewScoped
@@ -30,49 +31,72 @@ public class ContactController implements Serializable {
 
     @Getter
     private List<Contact> contacts;
-
+/**
+ * intializes a list 
+ */
     @PostConstruct
     private void contactControllerInit() {
         this.contacts = contactEao.findAll();
     }
-
+/**
+ * 
+ * @param contact
+ * @return the Zip-Code from the adresses
+ */
     public String zipCode(Contact contact) {
         return contact.getAddresses()
                .stream()
                .map(add -> add.getZipCode())
-               .collect(Collectors.joining("/"));
+               .collect(Collectors.joining("</br>"));
+         
 
     }
-    
+    /**
+     * 
+     * @param contact
+     * @return the city from the adresses 
+     */
     public String city(Contact contact) {
         return contact.getAddresses()
                 .stream()
                 .map(add -> add.getCity())
-                .collect(Collectors.joining("/"));
+                .collect(Collectors.joining("</br>"));
 
     }
-    
+    /**
+     * 
+     * @param contact
+     * @return the country from the adresses
+     */
     public String country(Contact contact) {
         return contact.getAddresses()
                 .stream()
                 .map(add -> add.getCountry().getCountryName())
-                .collect(Collectors.joining("/"));
+                .collect(Collectors.joining("</br>"));
 
     }
-    
+    /**
+     * 
+     * @param contact
+     * @return the street from the adresses
+     */
     public String street(Contact contact) {
         return contact.getAddresses()
                 .stream()
                 .map(add -> add.getStreet())
-                .collect(Collectors.joining("/"));
+                .collect(Collectors.joining("</br>"));
 
     }
-    
+    /**
+     * 
+     * @param contact
+     * @return all communication ways from the contacts
+     */
     public String communication(Contact contact){
         return contact.getCommunications()
                 .stream()
-                .map(com -> com.getType()+ " :" + com.getIdentifier())
-                .collect(Collectors.joining("/"));
+                .map(com -> com.getType()+ ": " + com.getIdentifier())
+                .collect(Collectors.joining("</br>"));
 }
 }
 
