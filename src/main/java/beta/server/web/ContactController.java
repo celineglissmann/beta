@@ -17,9 +17,9 @@ import javax.inject.Named;
 import lombok.Getter;
 
 /**
- * Controller for Contact
- * splits the adresses in city, zipcode,country, street 
- * collect all communications from contact 
+ * Controller for Contact. splits the adresses in city, zipcode,country, street
+ * . collects all communications from contact .
+ *
  * @author celine.glissmann
  */
 @Named
@@ -31,30 +31,35 @@ public class ContactController implements Serializable {
 
     @Getter
     private List<Contact> contacts;
-/**
- * intializes a list 
- */
+
+    /**
+     * intializes a list
+     */
     @PostConstruct
     private void contactControllerInit() {
         this.contacts = contactEao.findAll();
     }
-/**
- * 
- * @param contact
- * @return the Zip-Code from the adresses
- */
+
+    /**
+     * collect all zipcodes from the cities of contact html break to do a
+     * linebreak
+     *
+     * @param contact is valid
+     * @return the Zip-Code from the adresses
+     */
     public String zipCode(Contact contact) {
         return contact.getAddresses()
-               .stream()
-               .map(add -> add.getZipCode())
-               .collect(Collectors.joining("</br>"));
-         
+                .stream()
+                .map(add -> add.getZipCode())
+                .collect(Collectors.joining("</br>"));
 
     }
+
     /**
-     * 
-     * @param contact
-     * @return the city from the adresses 
+     * collect all cities from contact html break to do a linebreak
+     *
+     * @param contact is valid
+     * @return the city from the adresses
      */
     public String city(Contact contact) {
         return contact.getAddresses()
@@ -63,9 +68,11 @@ public class ContactController implements Serializable {
                 .collect(Collectors.joining("</br>"));
 
     }
+
     /**
-     * 
-     * @param contact
+     * collect all countrys of contact html break to do a linebreak
+     *
+     * @param contact is valid
      * @return the country from the adresses
      */
     public String country(Contact contact) {
@@ -75,9 +82,12 @@ public class ContactController implements Serializable {
                 .collect(Collectors.joining("</br>"));
 
     }
+
     /**
-     * 
-     * @param contact
+     * collect all streets and housenumbers from contact html break to do a
+     * linebreak
+     *
+     * @param contact is valid
      * @return the street from the adresses
      */
     public String street(Contact contact) {
@@ -87,16 +97,19 @@ public class ContactController implements Serializable {
                 .collect(Collectors.joining("</br>"));
 
     }
+
     /**
-     * 
-     * @param contact
+     * collects all communications names the communication type and the
+     * communication html break to do a linebreak
+     *
+     * @param contact is valid
      * @return all communication ways from the contacts
      */
-    public String communication(Contact contact){
+    public String communication(Contact contact) {
         return contact.getCommunications()
                 .stream()
-                .map(com -> com.getType()+ ": " + com.getIdentifier())
+                .map(com -> com.getType() + ": " + com.getIdentifier())
                 .collect(Collectors.joining("</br>"));
-}
-}
+    }
 
+}

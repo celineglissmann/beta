@@ -12,10 +12,14 @@
                 <title>PrimeFaces</title>
             </f:facet>
         </h:head>
-
-        <h:body>
-
-            <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden.">
+        
+        <h:body style="background-color: palegreen">
+         
+            <h1>Kontaktdaten</h1>
+             <ui:composition>
+            
+            
+            <p:dataTable var="contact" value="#{contactController.contacts}" emptyMessage="Keine Kontakte vorhanden." style="width: 1275px " >
                 <p:column headerText="Titel" style="width: 30px">
                     <h:outputText value="#{contact.title}" />
                 </p:column>
@@ -24,34 +28,35 @@
                     <h:outputText value="#{contact.firstName}" />
                 </p:column>
 
-                <p:column headerText="Nachname" style="width: 80px">
+                <p:column headerText="Nachname" style="width: 85px">
                     <h:outputText value="#{contact.lastName}" />
                 </p:column>
 
                 <p:column headerText="Geschlecht" style="width: 90px" >
                     <h:outputText value="#{contact.sex}" />
                 </p:column>
-                
-                  <p:column headerText="Anschrift">
-                      <h:outputText value="#{contactController.street(contact)}" escape="false" />
+
+                <p:column headerText="Anschrift" style="width: 200px">
+                    <h:outputText value="#{contactController.street(contact)}" escape="false" />
                 </p:column>
-                
+
                 <p:column headerText="PLZ" style="width: 90px">
                     <h:outputText value="#{contactController.zipCode(contact)}" escape="false" />
                 </p:column>
-                
-                <p:column headerText="Stadt">
+
+                <p:column headerText="Stadt" style="width: 150px">
                     <h:outputText value="#{contactController.city(contact)}" escape="false" />
                 </p:column>
-                
-                <p:column headerText="Land">
+
+                <p:column headerText="Land" style="width: 100px">
                     <h:outputText value="#{contactController.country(contact)}" escape="false" />
                 </p:column>
-                
-                <p:column headerText="Communications">
+
+                <p:column headerText="Communications" style="width: 250px">
                     <h:outputText value="#{contactController.communication(contact)}" escape="false"/>
                 </p:column>
             </p:dataTable>
+           </ui:composition>
         </h:body>
 
     </f:view>
