@@ -30,14 +30,37 @@ public class ContactController implements Serializable {
     ContactEao contactEao;
 
     @Getter
-    private List<Contact> contacts;
+    private List<Contact> contact;
 
     /**
      * intializes a list
      */
     @PostConstruct
-    private void contactControllerInit() {
-        this.contacts = contactEao.findAll();
+  
+    public void init() {
+        this.contact = contactEao.findAll();
+    }
+
+    /**
+     * Returns the List of Contacts
+     *
+     * @return List of Contacts
+     */
+    public List<Contact> getContact() {
+        return contact;
+    }
+     private List<Contact> filteredContact;
+
+    /**
+     * Set the contacts List to the given contacts
+     *
+     * @param contact
+     */
+    public void setContact(List<Contact> contact) {
+
+        this.contact = contact;
+
+    
     }
 
     /**
@@ -111,5 +134,14 @@ public class ContactController implements Serializable {
                 .map(com -> com.getType() + ": " + com.getIdentifier())
                 .collect(Collectors.joining("</br>"));
     }
-
+    
+    
+ 
+    public List<Contact> getFilteredContact() {
+        return filteredContact;
+    }
+ 
+    public void setFilteredCars(List<Contact> filteredContact) {
+        this.filteredContact = filteredContact;
+    }
 }

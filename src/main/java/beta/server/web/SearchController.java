@@ -16,25 +16,26 @@ import javax.inject.Named;
 @Named
 public class SearchController {
 
+     
     @Inject
     ContactEao contactEao;
-   
+
     @Inject
     ContactController contactController;
-            
-   private String inputSearch;
-        
-         
-    
-    public String getInputSearch(){
+
+    private String inputSearch ;
+
+    public String getInputSearch() {
         return inputSearch;
     }
-    
-    public void setInputSearch(String inputSearch){
-        this.inputSearch=inputSearch;
+
+    public void setInputSearch(String inputSearch) {
+        this.inputSearch = inputSearch;
     }
-    
-    public void search(){
-             contactEao.find(getInputSearch());
+
+    public void search() {
+        
+        contactController.setContact(contactEao.find(inputSearch));
+
     }
 }

@@ -13,13 +13,17 @@
             </f:facet>
         </h:head>
 
-        <h:body style="background-color: palegreen">
-            <h1>Kontaktdaten</h1>
-          
-            <p:inputText id="Search" value="#{SearchController.searchTerm}" />
-            <ui:include src= "ContactView.xhtml"/>
-                
-        </h:body>
+        <h:body style="background-color:  #00FFFF">
 
+            <h1>Kontaktdaten</h1>
+            <h:form id="search">
+                <p:inputText id="Searchtext" value="#{searchController.inputSearch}">
+                    <p:ajax event="keyup" listener="#{searchController.search()}" update="search"/>
+                </p:inputText>
+
+                <ui:include src= "ContactView.xhtml"/>
+            </h:form>
+
+        </h:body>
     </f:view>
 </html>
