@@ -7,23 +7,23 @@
 
     <f:view contentType="text/html">
         <h:head>
-            <f:facet name="first">
-                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>PrimeFaces</title>
-            </f:facet>
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>PrimeFaces</title>
         </h:head>
 
         <h:body style="background-color:  #00FFFF">
 
             <h1>Kontaktdaten</h1>
-            <h:form id="search">
-                <p:inputText id="Searchtext" value="#{searchController.inputSearch}">
-                    <p:ajax event="keyup" listener="#{searchController.search()}" update="search"/>
-                </p:inputText>
+            <h:form >
+                <p:inputText id="Searchtext" value="#{searchController.inputSearch}" placeholder="Vorname, Nachname oder PLZ" style="width: 300px">
+                    <p:ajax event="keyup"   listener="#{searchController.search()}"   update="datatable,out1"/>
+                </p:inputText><br/>
 
-                <ui:include src= "ContactView.xhtml"/>
-            </h:form>
+                <h:outputText id="out1" value="#{searchController.inputSearch}" /><br/>
+           
 
+<ui:include src= "ContactView.xhtml"/>
+ </h:form>
         </h:body>
     </f:view>
 </html>

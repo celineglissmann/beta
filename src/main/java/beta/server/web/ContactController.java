@@ -36,7 +36,6 @@ public class ContactController implements Serializable {
      * intializes a list
      */
     @PostConstruct
-  
     public void init() {
         this.contact = contactEao.findAll();
     }
@@ -44,12 +43,11 @@ public class ContactController implements Serializable {
     /**
      * Returns the List of Contacts
      *
-     * @return List of Contacts
+     * @return List of Contacts 
      */
     public List<Contact> getContact() {
         return contact;
     }
-     private List<Contact> filteredContact;
 
     /**
      * Set the contacts List to the given contacts
@@ -137,11 +135,5 @@ public class ContactController implements Serializable {
     
     
  
-    public List<Contact> getFilteredContact() {
-        return filteredContact;
-    }
- 
-    public void setFilteredCars(List<Contact> filteredContact) {
-        this.filteredContact = filteredContact;
-    }
+
 }

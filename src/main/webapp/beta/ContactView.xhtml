@@ -7,10 +7,10 @@
 
     <f:view contentType="text/html">
         <h:head>
-            <f:facet name="first">
+           
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>PrimeFaces</title>
-            </f:facet>
+           
         </h:head>
 
         <h:body style="background-color: palegreen">
@@ -18,8 +18,8 @@
             <h1>Kontaktdaten</h1>
             <ui:composition>
 
-                <h:form id="tableform"> 
-                    <p:dataTable var="contact" value="#{contactController.contact}" emptyMessage="Keine Kontakte vorhanden." style="width: 1275px " >
+               
+                    <p:dataTable var="contact" value="#{contactController.contact}" emptyMessage="Keine Kontakte vorhanden." id="datatable" style="width: 1275px " >
                         <p:column headerText="Titel" style="width: 30px">
                             <h:outputText value="#{contact.title}" />
                         </p:column>
@@ -56,7 +56,7 @@
                             <h:outputText value="#{contactController.communication(contact)}" escape="false"/>
                         </p:column>
                     </p:dataTable>
-                </h:form>
+            
             </ui:composition>
         </h:body>
 

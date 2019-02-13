@@ -6,6 +6,8 @@
 package beta.server.web;
 
 import beta.server.eao.ContactEao;
+import java.io.Serializable;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -14,7 +16,8 @@ import javax.inject.Named;
  * @author celine.glissmann
  */
 @Named
-public class SearchController {
+@ViewScoped
+public class SearchController implements Serializable {
 
      
     @Inject
