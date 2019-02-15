@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beta.server.web;
 
 import beta.server.eao.ContactEao;
@@ -27,15 +22,23 @@ public class SearchController implements Serializable {
     ContactController contactController;
 
     private String inputSearch ;
-
+/**
+ * gets the searched input
+ * @return the searched input
+ */
     public String getInputSearch() {
         return inputSearch;
     }
-
+/**
+ * sets the search input 
+ * @param inputSearch 
+ */
     public void setInputSearch(String inputSearch) {
         this.inputSearch = inputSearch;
     }
-
+/**
+ * finds all contacts with the searched input
+ */
     public void search() {
         
         contactController.setContact(contactEao.find(inputSearch));
