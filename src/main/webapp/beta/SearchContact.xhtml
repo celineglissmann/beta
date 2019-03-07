@@ -9,21 +9,25 @@
         <h:head>
             <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
             <title>PrimeFaces</title>
+            <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
         </h:head>
 
-        <h:body style="background-color:  #00FFFF">
+        <h:body style="background-color:  palegreen; " >
 
-            <h1>Kontaktdaten</h1>
+            <h1 style="color: blue">Kontaktdaten</h1>
             <h:form >
-                <p:inputText id="Searchtext" value="#{searchController.inputSearch}" placeholder="Vorname, Nachname oder PLZ" style="width: 300px">
-                    <p:ajax event="keyup"   listener="#{searchController.search()}"   update="datatable,out1"/>
-                </p:inputText><br/>
+                <div>
+                    <p:inputText id="Searchtext" value="#{searchController.inputSearch}" placeholder="Vorname, Nachname oder PLZ" style="width: 300px; color: deepskyblue">
+                        <p:ajax event="keyup"   listener="#{searchController.search()}"   update="datatable,out1"/>
+                    </p:inputText><br/>
 
-                <h:outputText id="out1" value="#{searchController.inputSearch}" /><br/>
-           
+                    <h:outputText id="out1" value="#{searchController.inputSearch}" /><br/>
 
-<ui:include src= "ContactView.xhtml"/>
- </h:form>
+
+                    <ui:include src= "ContactView.xhtml"/>
+                </div>
+                <h:outputText id="out2" value="Made by Celine :-)" style="font-size: 30px; color: blue"/>
+            </h:form>
         </h:body>
     </f:view>
 </html>

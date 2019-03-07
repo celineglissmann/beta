@@ -19,7 +19,13 @@
             <ui:composition>
 
                
-                    <p:dataTable var="contact" value="#{contactController.contact}" emptyMessage="Keine Kontakte vorhanden." id="datatable" style="width: 1275px; font-color:  #FF0000" >
+                    <p:dataTable var="contact" value="#{contactController.contact}" 
+                                 emptyMessage="Keine Kontakte vorhanden." 
+                                 id="datatable"
+                                 style="width: 1275px;
+                                 font-family: fantasy" >
+                        
+                        
                         <p:column headerText="Titel" style="width: 30px">
                             <h:outputText value="#{contact.title}" />
                         </p:column>

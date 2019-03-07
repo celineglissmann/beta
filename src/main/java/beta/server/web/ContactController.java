@@ -57,9 +57,8 @@ public class ContactController implements Serializable {
     }
 
     /**
-     * collect all zipcodes from the cities of contact html break to do a
-     * linebreak
-     *
+     * collect all zipcodes from the cities of contact
+     * html break to do a linebreak between the different zipcodes
      * @param contact is valid
      * @return the Zip-Code from the adresses
      */
@@ -72,8 +71,8 @@ public class ContactController implements Serializable {
     }
 
     /**
-     * collect all cities from contact html break to do a linebreak
-     *
+     * collect all cities from contact 
+     * html break to do a linebreak between the different cities
      * @param contact is valid
      * @return the city from the adresses
      */
@@ -86,8 +85,8 @@ public class ContactController implements Serializable {
     }
 
     /**
-     * collect all countrys of contact html break to do a linebreak
-     *
+     * collect all countrys of contact 
+     * html break to do a linebreak between the different countrys
      * @param contact is valid
      * @return the country from the adresses
      */
@@ -100,8 +99,8 @@ public class ContactController implements Serializable {
     }
 
     /**
-     * collect all streets and housenumbers from contact html break to do a
-     * linebreak
+     * collect all streets and housenumbers from contact 
+     * html break to do a linebreak between the different streets
      *
      * @param contact is valid
      * @return the street from the adresses
@@ -116,7 +115,7 @@ public class ContactController implements Serializable {
 
     /**
      * collects all communications names the communication type and the
-     * communication html break to do a linebreak
+     * communication html break to do a linebreak between the different communications
      *
      * @param contact is valid
      * @return all communication ways from the contacts
